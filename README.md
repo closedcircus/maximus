@@ -8,3 +8,4 @@ The fundamental idea here is create a software layer above the physical devices 
 * Device (with states, actions)
 * Node
 * Visualizers
+*
