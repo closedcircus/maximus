@@ -20,9 +20,9 @@ It is most likely a Raspberry PI device but it could easily be anything that doe
 A device does work. This could be anything, really. It could be turning on a light bulb, measuring the temperature of the room, locking all doors. This work represents the internal working of the device, and is of little concern to Maximus.
 
 A device contains state. For now, state is simply a collection of key-value pairs. For instance, the light bulb device could have the following state:
-> STATE: ON
-> RED:   255
-> GREEN: 150
+> STATE: ON  
+> RED:   255  
+> GREEN: 150  
 > BLUE:  0
 
 There are 2 possible ways Maximus could get the state of a device (we'll have to decide which we want or if we want to support both):
