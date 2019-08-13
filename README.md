@@ -7,13 +7,14 @@ The fundamental idea here is create a software layer above the physical devices 
 ## Components
 * Device
 * Node
+* Master
 * Visualizers
 
 #### Device
 A device is the actual component that:
 * does work
 * contains a state
-* and can receive actions from an external source
+* and can receive commands from an external source
 
 It is most likely a Raspberry PI device but it could easily be anything that does what is stated above.
 
@@ -29,4 +30,17 @@ There are 2 possible ways Maximus could get the state of a device (we'll have to
 1. Pull: Maximus sends a command to the device, and the device replies with its state.
 2. Push: the devices sends its state to Maximus
 
+A device can also receive commands from Maximus.
+
 #### Node
+* has a store that stores the current state of the underlying device
+* runs one or more scripts after every specified interval (or on events) that has access to the state variables
+* publishes (and subscribes to) events // this facilitates cross-node comms
+* nodes may make requests to other nodes
+* hooks that subscribe to events
+* how do you connect a node to a device?
+
+#### Master
+* hooks that subscribe to events (without creating a node for such nodes)
+
+This is designed to facilitate cross-node communication. For instance, assuming we want a light bulb to go off when the temperature in the room is above 20<sup>o</sup>C, we need to facilitate communication between the light bulb device and the thermometer device. While
