@@ -33,7 +33,7 @@ There are 2 possible ways Maximus could get the state of a device (we'll have to
 A device can also receive commands from Maximus.
 
 #### Node
-* has a store that stores the current state of the underlying device
+* has a database that stores the current state of the underlying device
 * runs one or more scripts after every specified interval (or on events) that has access to the state variables
 * publishes (and subscribes to) events // this facilitates cross-node comms
 * nodes may make requests to other nodes
